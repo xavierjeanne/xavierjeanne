@@ -1,0 +1,17 @@
+node_modules
+.idea
+.idea/vcs.xml
+
+.idea/modules.xml
+
+.idea/bt-sass-blank-theme.iml
+
+.idea/codeStyles/codeStyleConfig.xml
+
+.idea/deployment.xml
+
+.idea/misc.xml
+
+# Permet d'ajouter des fonctions à n'utiliser 
+# que sur le local, tel qu'intégrer mailtrap
+local-functions.php
