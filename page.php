@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<h1>Page d'acceuil'</h1>
 <section class="entry-section">
 
     <?php

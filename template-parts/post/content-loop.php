@@ -6,6 +6,6 @@
         <?php the_excerpt(); ?>
     </section>
     <a href="<?php the_permalink(); ?>" class="read-more">
-        <?php _e('Read more', I18N_DOMAIN); ?>
+        <?php _e('Read more'); ?>
     </a>
 </article>

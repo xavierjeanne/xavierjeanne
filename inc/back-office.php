@@ -28,18 +28,6 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title' 	=> 'Partenaires',
-        'menu_title'	=> 'Partenaires',
-        'parent_slug'	=> 'theme-general-settings',
-    ));
-
-    acf_add_options_sub_page(array(
-        'page_title' 	=> 'Newsletter',
-        'menu_title'	=> 'Newsletter',
-        'parent_slug'	=> 'theme-general-settings',
-    ));
-
-    acf_add_options_sub_page(array(
         'page_title' 	=> 'Formulaire de Contact',
         'menu_title'	=> 'Contact',
         'parent_slug'	=> 'theme-general-settings',

@@ -1,14 +1,12 @@
 <?php
-// Load constants first
-include('inc/constants.php');
+
+include('inc/back-office.php');
 
 // Include your functions files here
 include('inc/enqueues.php');
-include('inc/excerpt.php');
-include('gutenberg-blocks/gutenberg.php');
 /**
  * Permet d'ajouter des fonctions uniquement 
- * sur le local et qui est ignoré via le 
+ * sur le local et qui est ignorï¿½ via le 
  * .gitignore
  **/
 if (file_exists(__DIR__.'/local-functions.php')) {
@@ -57,34 +55,9 @@ if ( ! isset($content_width)) {
  */
 //@TODO : declare your menus here
 register_nav_menus(array(
-    'main_menu' => __('Main menu', I18N_DOMAIN)
+    'main_menu' => __('Main menu')
 ));
 
-
-/**
- * register sidebars
- * cf : https://codex.wordpress.org/Function_Reference/register_sidebar
- *
- * @return void
- */
-function theme_register_sidebars()
-{
-    if ( ! function_exists('register_sidebar')) {
-        return;
-    }
-    //@TODO : declare your sidebar here
-    register_sidebar(array(
-        'name'          => __('Main sidebar', I18N_DOMAIN),
-        'id'            => 'main-sidebar',
-        'description'   => '',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-}
-
-//add_action( 'widgets_init', 'theme_register_sidebars' ); //@TODO : uncomment if you're need sidebar(s)
 
 
 /**
@@ -109,11 +82,8 @@ function theme_remove_emojis()
 //add_action( 'init', 'theme_remove_emojis' ); //@TODO: Uncomment if you don't need emojis and want to optimize your site
 
 
-include_once( get_stylesheet_directory() .'/inc/back-office.php');
-include_once( get_stylesheet_directory() .'/inc/mails.php');
-
 /**
- * Désactiver les mises à jour automatiques (themes, plugins, core)
+ * Dï¿½sactiver les mises ï¿½ jour automatiques (themes, plugins, core)
  **/
 function disable_automatic_updater($disabled) {
     return true;

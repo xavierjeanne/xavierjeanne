@@ -1,11 +1,10 @@
-IIF Wordpress Starter theme
+Wordpress Starter theme
 
 
 #Contenu #
 
 ## Theme
-Theme Starter IIF 
-- documentation: https://imageinfrance.atlassian.net/l/c/uuM2QHUq
+Theme Starter 
 
 
 #Setup du theme
@@ -14,15 +13,13 @@ Theme Starter IIF
 - npm installé
 - git installé
 - WordPress actif
-- (optional) livereload plugin installed in your browser
 
 
 ### How to
-( npm install package --save-dev)
+
     $ npm install
     $ gulp
 
-npm install imagemin-keep-folder --save-dev
 
 ### Gulp Tasks
 - `gulp`: watch js/sass/img directories ; compile sass ; minify js ; optimize images
