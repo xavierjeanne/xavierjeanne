@@ -14,24 +14,20 @@ add_filter('upload_mimes', 'wpc_mime_types');
 if( function_exists('acf_add_options_page') ) {
 
     acf_add_options_page(array(
-        'page_title' 	=> 'Paramètres WP',
-        'menu_title'	=> 'Paramètres WP',
+        'page_title' 	=> 'Paramètres',
+        'menu_title'	=> 'Paramètres',
         'menu_slug' 	=> 'theme-general-settings',
         'capability'	=> 'edit_posts',
         'redirect'		=> true
     ));
 
     acf_add_options_sub_page(array(
-        'page_title' 	=> 'Paramètres Home',
-        'menu_title'	=> 'Home',
+        'page_title' 	=> 'Coordonnées',
+        'menu_title'	=> 'Coordonnées',
         'parent_slug'	=> 'theme-general-settings',
     ));
 
-    acf_add_options_sub_page(array(
-        'page_title' 	=> 'Formulaire de Contact',
-        'menu_title'	=> 'Contact',
-        'parent_slug'	=> 'theme-general-settings',
-    ));
+   
 
 }
 
