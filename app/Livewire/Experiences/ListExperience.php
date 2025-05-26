@@ -41,7 +41,7 @@ class ListExperience extends Component
         $experience->delete();
         
         $this->refreshExperiences();
-        $this->dispatch('experience-deleted');
+        $this->dispatch('experienceDeleted');
     }
     
     public function render()

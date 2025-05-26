@@ -7,7 +7,7 @@ use Livewire\Livewire;
 uses(\Illuminate\Foundation\Testing\RefreshDatabase::class);
 
 test('login screen can be rendered', function () {
-    $response = $this->get('/login');
+    $response = $this->get('/back-081081');
 
     $response->assertStatus(200);
 });
