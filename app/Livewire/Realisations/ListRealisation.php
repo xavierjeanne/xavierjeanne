@@ -41,7 +41,7 @@ class ListRealisation extends Component
         $realisation->delete();
         
         $this->refreshRealisations();
-        $this->dispatch('realisation-deleted');
+        $this->dispatch('realisationDeleted');
     }
     
     public function render()
