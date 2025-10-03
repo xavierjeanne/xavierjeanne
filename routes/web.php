@@ -5,13 +5,12 @@ use App\Livewire\Settings\Password;
 use App\Livewire\Skills\ManageSkill;
 use App\Livewire\Settings\Appearance;
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Experiences\ManageExperience;
+use App\Http\Controllers\HomeController;
 use App\Livewire\Formations\ManageFormation;
+use App\Livewire\Experiences\ManageExperience;
 use App\Livewire\Realisations\ManageRealisation;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
