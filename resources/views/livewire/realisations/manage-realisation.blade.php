@@ -15,7 +15,7 @@
                 </div>
                 
                 <div>
-                    <flux:input wire:model="type" :label="__('Type')" type="text" required />
+                    <flux:input wire:model="company" :label="__('Entreprise')" type="text" required />
                 </div>
 
                 <div>
@@ -40,7 +40,23 @@
                         @endforeach
                     </div>
                 </div>
-                
+                <div>
+                    <flux:input type="file" wire:model="logo" label="Logo"/>
+                @if($logo && method_exists($logo, 'temporaryUrl'))
+                    <div class="mt-2">
+                        <p>Preview:</p>
+                        <img src="{{ $logo->temporaryUrl() }}" alt="Logo Preview" class="w-20 h-20 object-cover">
+                    </div>
+                @elseif($logo)
+                    <div class="mt-2 flex items-center gap-2">
+                        <p>Current Logo:</p>
+                        <img src="{{ Storage::url($logo) }}" alt="Current Logo" class="w-20 h-20 object-cover">
+                        <flux:button wire:click="deleteLogo" variant="danger" size="sm" type="button">
+                            {{ __('Delete') }}
+                        </flux:button>
+                    </div>
+                @endif
+                </div>
                 <div class="flex justify-end space-x-3 pt-4">
                     <flux:button variant="danger" type="submit">
                         {{ __('Sauvegarder') }}

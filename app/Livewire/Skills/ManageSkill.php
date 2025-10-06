@@ -4,9 +4,9 @@ namespace App\Livewire\Skills;
 
 use App\Models\Skill;
 use Livewire\Component;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class ManageSkill extends Component
 {

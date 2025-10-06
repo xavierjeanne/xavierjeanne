@@ -6,9 +6,12 @@ use App\Models\Realisation;
 use App\Models\Skill;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Livewire\WithFileUploads;
 
 class ManageRealisation extends Component
 {
+     use WithFileUploads;
     public $realisations = [];
     public $skills = [];
     
@@ -16,7 +19,8 @@ class ManageRealisation extends Component
     public $realisationId = null;
     public $title = '';
     public $link = '';
-    public $type = '';
+    public $company = '';
+    public $logo = null;
     public $description = '';
     public $selectedSkills = [];
     
@@ -43,11 +47,12 @@ class ManageRealisation extends Component
         
         $this->realisationId = $realisation->id;
         $this->title = $realisation->title;
-        $this->type = $realisation->type;
+        $this->company = $realisation->company;
         $this->link = $realisation->link;
         $this->description = $realisation->description;
         $this->selectedSkills = $realisation->skills->pluck('id')->toArray();
-        
+        $this->logo = $realisation->logo;
+
         $this->isEditing = true;
     }
     
@@ -55,12 +60,14 @@ class ManageRealisation extends Component
     {
         $this->validate([
             'title' => 'required|string|max:255',
-            'type' => 'required|string|max:255',
+            'company' => 'required|string|max:255',
             'link' => 'required|string|max:255',
             'description' => 'required|string',
             'selectedSkills' => 'array',
         ]);
-        
+         if ($this->logo && !is_string($this->logo)) {
+            $rules['logo'] = ['nullable', 'mimes:jpg,jpeg,png,pdf', 'max:1024'];
+        }
         if ($this->realisationId) {
             // Update existing realisation
             $realisation = Realisation::findOrFail($this->realisationId);
@@ -73,9 +80,19 @@ class ManageRealisation extends Component
         }
         
         $realisation->title = $this->title;
-        $realisation->type = $this->type;
+        $realisation->company = $this->company;
         $realisation->link = $this->link;
+       
         $realisation->description = $this->description;
+        if ($this->logo && !is_string($this->logo)) {
+            $filename = $this->title .'.'. $this->logo->getClientOriginalExtension();
+            
+            // Store the file in the public storage under a 'logos' directory
+            $this->logo->storeAs('realisations', $filename, 'public');
+            
+            // Save the logo path to the user model
+            $realisation->logo = 'realisations/' . $filename;
+        }
         $realisation->save();
         
         // Sync skills
@@ -96,12 +113,34 @@ class ManageRealisation extends Component
     {
         $this->realisationId = null;
         $this->title = '';
-        $this->type = '';
+        $this->company = '';
         $this->link = '';
         $this->description = '';
         $this->selectedSkills = [];
+        $this->logo = null;
     }
-    
+
+    public function deleteLogo(): void
+    {
+        $realisation = Realisation::findOrFail($this->realisationId);
+
+        if ($realisation->logo) {
+            // Delete the file from storage
+            if (Storage::disk('public')->exists($realisation->logo)) {
+                Storage::disk('public')->delete($realisation->logo);
+            }
+            
+            // Remove the reference from the user model
+            $realisation->logo = null;
+            $realisation->save();
+            
+            // Update the component property
+            $this->logo = null;
+
+            $this->dispatch('profile-updated', title: $realisation->title);
+        }
+    }
+
     public function render()
     {
         return view('livewire.realisations.manage-realisation');

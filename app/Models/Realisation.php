@@ -13,7 +13,8 @@ class Realisation extends Model
         'title',
         'link',
         'description',
-        'type',
+        'company',
+        'logo',
     ];
 
     /**

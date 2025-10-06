@@ -21,7 +21,7 @@ class HomeController extends Controller
         $experiences = Experience::orderBy('date_debut', 'desc')->get();
         $formations = Formation::orderBy('date', 'desc')->get();
         $skills = Skill::all();
-        $realisations = Realisation::all();
+        $realisations = Realisation::with('skills')->get();
         $user = User::first();
         return view('welcome', compact('experiences', 'formations', 'skills', 'realisations', 'user'));
     }

@@ -4,6 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Xavier Jeanne | Développeur Fullstack | Portfolio">
+  <meta name="author" content="Xavier Jeanne">
+  <meta name="keywords" content="Xavier Jeanne, Développeur, Fullstack, Portfolio, Laravel, Livewire, Tailwind CSS, PHP, JavaScript, HTML, CSS">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="theme-color" content="#0F172A">
+  <meta name="title" content="Xavier Jeanne | Développeur Fullstack">
   <title>Xavier Jeanne | Développeur Fullstack</title>
   <link rel="icon" type="image/x-icon" href="{{asset('logo.png')}}">
   @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -14,20 +21,23 @@
 <!-- Sidebar flottant gauche (desktop) -->
 <aside id="sidebar"
        class="hidden md:flex fixed top-1/2 left-4 transform -translate-y-1/2 flex-col space-y-6
-              bg-[#1E293B] border border-[#0F172A] shadow-2xl rounded-xl p-3 z-50 transition-opacity duration-300">
+              bg-[#1E293B] border border-[#0F172A] shadow-2xl rounded-xl p-2 z-50 transition-opacity duration-300">
   <!-- Présentation -->
-  <a href="#presentation" class="relative group text-[#A5B4FC] hover:text-[#6366F1]" aria-label="Présentation">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M5.121 17.804A7 7 0 0112 15a7 7 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-    </svg>
-    <span class="absolute left-10 top-1/2 -translate-y-1/2 bg-[#1E293B] text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
-      Présentation
-    </span>
-  </a>
+  <a href="#presentation"
+   class="relative group text-[#A5B4FC]
+          p-2 rounded-lg transition-all duration-150 
+          hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]"
+   aria-label="Présentation">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M5.121 17.804A7 7 0 0112 15a7 7 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+  </svg>
+</a>
 
   <!-- Compétences -->
-  <a href="#skills" class="relative group text-[#A5B4FC] hover:text-[#6366F1]" aria-label="Compétences">
+  <a href="#skills" class="relative group text-[#A5B4FC]
+          p-2 rounded-lg transition-all duration-150 
+          hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]" aria-label="Compétences">
     <!-- Nouveau SVG -->
     <svg class="w-6 h-6" fill="#A5B4FC" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <g>
@@ -43,7 +53,9 @@
   </a>
 
   <!-- Expérience -->
-  <a href="#experience" class="relative group text-[#A5B4FC] hover:text-[#6366F1]" aria-label="Expérience">
+  <a href="#experience" class="relative group text-[#A5B4FC]
+          p-2 rounded-lg transition-all duration-150 
+          hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]" aria-label="Expérience">
     <!-- Nouveau SVG -->
     <svg class="w-6 h-6" fill="#A5B4FC" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
       <path d="M20,12.5L20,12.5c0,0.276,0.224,0.5,0.5,0.5h7c0.276,0,0.5-0.224,0.5-0.5v0c0-0.276-0.224-0.5-0.5-0.5
@@ -66,7 +78,9 @@
   </a>
 
 
-  <a href="#formation" class="relative group text-[#A5B4FC] hover:text-[#6366F1]" aria-label="Formation">
+  <a href="#formation" class="relative group text-[#A5B4FC]
+          p-2 rounded-lg transition-all duration-150 
+          hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]" aria-label="Formation">
     <!-- SVG Formation (exemple : chapeau de diplômé) -->
     <svg class="w-6 h-6" fill="#A5B4FC" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
       <path d="M32 4L2 20l30 16 30-16L32 4zm0 28L12 24v12l20 10 20-10V24L32 32zm0 12l-20-10v12l20 10 20-10V34L32 44z"/>
@@ -78,7 +92,9 @@
     </span>
   </a>
   <!-- Réalisations -->
-  <a href="#realisations" class="relative group text-[#A5B4FC] hover:text-[#6366F1]" aria-label="Réalisations">
+  <a href="#realisations" class="relative group text-[#A5B4FC]
+          p-2 rounded-lg transition-all duration-150 
+          hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]" aria-label="Réalisations">
     <!-- SVG Réalisations -->
     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M4 12H3V8C3 6.89543 3.89543 6 5 6H9M4 12V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12M4 12H10M20 12H21V8C21 6.89543 20.1046 6 19 6H15M20 12H14M14 12V10H10V12M14 12V14H10V12M9 6V5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V6M9 6H15" stroke="#A5B4FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -91,7 +107,9 @@
   </a>
 
 
-  <a href="#contact" class="relative group text-[#A5B4FC] hover:text-[#6366F1]" aria-label="Contact">
+  <a href="#contact" class="relative group text-[#A5B4FC]
+          p-2 rounded-lg transition-all duration-150 
+          hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]" aria-label="Contact">
     <!-- SVG Contact -->
     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M19.2715 18.2637L20.9996 20M11.5 19H6.2C5.0799 19 4.51984 19 4.09202 18.782C3.71569 18.5903 3.40973 18.2843 3.21799 17.908C3 17.4802 3 16.9201 3 15.8V8.2C3 7.0799 3 6.51984 3.21799 6.09202C3.40973 5.71569 3.71569 5.40973 4.09202 5.21799C4.51984 5 5.0799 5 6.2 5H17.8C18.9201 5 19.4802 5 19.908 5.21799C20.2843 5.40973 20.5903 5.71569 20.782 6.09202C21 6.51984 21 7.0799 21 8.2V11M20.6067 8.26229L15.5499 11.6335C14.2669 12.4888 13.6254 12.9165 12.932 13.0827C12.3192 13.2295 11.6804 13.2295 11.0677 13.0827C10.3743 12.9165 9.73279 12.4888 8.44975 11.6335L3.14746 8.09863M20 16.5C20 17.8807 18.8807 19 17.5 19C16.1193 19 15 17.8807 15 16.5C15 15.1193 16.1193 14 17.5 14C18.8807 14 20 15.1193 20 16.5Z" stroke="#A5B4FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -222,6 +240,7 @@
           <p class="text-[#06B6D4]">{{ $exp->description }}</p>
         @endif
       </div>
+      <hr>
     @empty
       <div class="text-left text-[#E0E7FF]">
         Aucune expérience trouvée
@@ -271,16 +290,51 @@
 
 <section id="realisations" class="bg-[#0F172A] py-20 px-6 fade-in">
   <h2 class="text-3xl font-semibold text-center text-[#E0E7FF] mb-12">Réalisations</h2>
-  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-   @forelse($realisations as $realisation)
-      <a href="{{$realisation->link}}" target="_blank" class="p-6 bg-[#1E293B] rounded-lg shadow hover:shadow-lg text-[#E0E7FF] hover:text-[#6366F1] transition">{{$realisation->title}}-{{$realisation->type}}<br/>{{$realisation->description}}</a>
+  <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-8">
+    @forelse($realisations as $realisation)
+      
+    <a href="{{ $realisation->link }}" target="_blank"
+       class="block bg-[#1E293B] border border-[#0F172A] rounded-xl shadow-lg hover:shadow-2xl  transition-all p-4 w-full max-w-sm group">
+
+      <!-- Image -->
+      <div class="w-full h-40 bg-[#0F172A] rounded-md overflow-hidden flex items-center justify-center">
+        <img src="{{ $realisation->logo ? Storage::url($realisation->logo) : asset('logo.png') }}"
+             alt="{{ $realisation->title }}"
+             class="object-contain max-h-full ">
+      </div>
+
+      <!-- Titre + Description -->
+      <div class="mt-4">
+        <h3 class="text-xl font-bold text-[#E0E7FF]">{{ $realisation->title }}</h3>
+        <p class="text-[#94A3B8] text-sm mt-1">{{ $realisation->description }}</p>
+      </div>
+
+      <!-- Entreprise -->
+      <div class="mt-3 text-sm text-[#CBD5E1] font-medium">
+        Entreprise : <span class="text-[#E0E7FF]">{{ $realisation->company }}</span>
+      </div>
+
+      <!-- Skills -->
+      <div class="flex flex-wrap items-center gap-2 mt-3">
+        @foreach($realisation->skills as $skill)
+        <span class="flex items-center gap-1 px-2 py-1 bg-[#334155] rounded-full text-sm text-[#E0E7FF]">
+          <img src="{{ $skill->logo ? Storage::url($skill->logo) : asset('logo.png') }}"
+               alt="{{ $skill->title }}"
+               class="w-4 h-4">
+          {{ $skill->title }}
+        </span>
+        @endforeach
+      </div>
+
+    </a>
     @empty
-      <div class="p-4 bg-[#0F172A] rounded-xl text-[#E0E7FF]">
+      <div class="p-4 bg-[#1E293B] rounded-xl text-[#E0E7FF] text-center">
         Aucune réalisation trouvée
       </div>
     @endforelse
   </div>
 </section>
+
 <section id="contact" class="bg-[#1E293B] py-20 px-6 fade-in">
   <h2 class="text-3xl font-semibold text-center text-[#E0E7FF] mb-12">Contact</h2>
 

@@ -5,7 +5,7 @@
                 <div class="flex justify-between items-start">
                     <div>
                         <h3 class="text-lg font-semibold">{{ $realisation->title }}</h3>
-                        <p class="text-gray-600 dark:text-gray-400">{{ $realisation->entreprise }}</p>
+                        <p class="text-gray-600 dark:text-gray-400">{{ $realisation->company }}</p>
                        
                     </div>
                     <div class="flex space-x-2">
