@@ -317,7 +317,7 @@
       <!-- Skills -->
       <div class="flex flex-wrap items-center gap-2 mt-3">
         @foreach($realisation->skills as $skill)
-        <span class="flex items-center gap-1 p-2 bg-[#334155] rounded-full text-sm text-[#E0E7FF]">
+        <span class="flex items-center gap-1 p-2  rounded-full text-sm text-[#E0E7FF]">
           <img src="{{ $skill->logo ? Storage::url($skill->logo) : asset('logo.png') }}"
                alt="{{ $skill->title }}"
                class="w-4 h-4">
