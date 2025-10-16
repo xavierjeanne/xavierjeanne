@@ -77,4 +77,25 @@ select:focus[data-flux-control] {
   .fade-in.show {
     @apply opacity-100 translate-y-0;
   }
+  
+  /* Amélioration pour mobile */
+  @media (max-width: 768px) {
+    .fade-in {
+      @apply translate-y-4 duration-500;  /* Animation plus courte et plus subtile sur mobile */
+    }
+  }
+  
+  /* Version fallback sans JavaScript */
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in {
+      @apply opacity-100 translate-y-0 transition-none;
+    }
+  }
+  
+  /* Désactiver les animations sur très petits écrans si problème */
+  @media (max-width: 480px) {
+    .fade-in {
+      @apply opacity-100 translate-y-0;
+    }
+  }
 }

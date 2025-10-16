@@ -1,17 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(".fade-in");
 
+  // Configuration différente pour mobile et desktop
+  const isMobile = window.innerWidth <= 768;
+  const isVerySmall = window.innerWidth <= 480;
+  
+  // Sur très petits écrans, afficher immédiatement tout le contenu
+  if (isVerySmall) {
+    elements.forEach(el => el.classList.add('show'));
+    return; // Sortir de la fonction, pas besoin d'observer
+  }
+  
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
       } else {
-        entry.target.classList.remove("show");
+        // Ne pas retirer la classe 'show' une fois ajoutée pour éviter les saccades
+        // entry.target.classList.remove("show");
       }
     });
-  }, { threshold: 0.2 });
+  }, { 
+    threshold: isMobile ? 0.1 : 0.2,  // Seuil plus bas sur mobile
+    rootMargin: isMobile ? '0px 0px -50px 0px' : '0px 0px -100px 0px'  // Marge différente
+  });
 
   elements.forEach(el => observer.observe(el));
+
+  // Debug pour mobile - afficher les éléments après un délai si ils ne sont pas visibles
+  if (isMobile) {
+    setTimeout(() => {
+      elements.forEach(el => {
+        if (!el.classList.contains('show')) {
+          // Force l'affichage si l'élément n'est pas visible après 2 secondes
+          el.classList.add('show');
+          console.log('Force show element:', el.id || el.className);
+        }
+      });
+    }, 2000);
+  }
+
+  // Vérifier le redimensionnement de la fenêtre
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      // Réinitialiser l'observer après redimensionnement
+      observer.disconnect();
+      elements.forEach(el => observer.observe(el));
+    }, 250);
+  });
 
   const menuBubble = document.getElementById("menuBubble");
   const mobileMenu = document.getElementById("mobileMenu");
