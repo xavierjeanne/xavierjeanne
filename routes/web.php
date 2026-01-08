@@ -11,6 +11,14 @@ use App\Livewire\Experiences\ManageExperience;
 use App\Livewire\Realisations\ManageRealisation;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/old', function() {
+    $experiences = \App\Models\Experience::orderBy('date_debut', 'desc')->get();
+    $formations = \App\Models\Formation::orderBy('date', 'desc')->get();
+    $skills = \App\Models\Skill::all();
+    $realisations = \App\Models\Realisation::with('skills')->get();
+    $user = \App\Models\User::first();
+    return view('welcome', compact('experiences', 'formations', 'skills', 'realisations', 'user'));
+})->name('old');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

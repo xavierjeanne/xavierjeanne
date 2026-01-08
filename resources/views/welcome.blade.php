@@ -1,22 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Xavier Jeanne | Développeur Fullstack | Portfolio">
+  <meta name="description" content="Xavier Jeanne | Développeur Web Freelance - Laravel, Livewire, Vue.js">
   <meta name="author" content="Xavier Jeanne">
-  <meta name="keywords" content="Xavier Jeanne, Développeur, Fullstack, Portfolio, Laravel, Livewire, Tailwind CSS, PHP, JavaScript, HTML, CSS">
+  <meta name="keywords" content="Xavier Jeanne, Développeur Freelance, Laravel, Livewire, Vue.js, PHP, Applications Web">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#0F172A">
-  <meta name="title" content="Xavier Jeanne | Développeur Fullstack">
-  <title>Xavier Jeanne | Développeur Fullstack</title>
+  <meta name="title" content="Xavier Jeanne | Développeur Web Freelance">
+  <title>Xavier Jeanne | Développeur Web Freelance</title>
   <link rel="icon" type="image/x-icon" href="{{asset('logo.png')}}">
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   @php use Illuminate\Support\Facades\Storage; @endphp
 </head>
-<body class="bg-[#0F172A] text-[#E0E7FF] font-sans">
+<body class="bg-[#0F172A] text-[#E0E7FF] font-sans antialiased">
 
 <!-- Sidebar flottant gauche (desktop) -->
 <aside id="sidebar"
@@ -25,7 +24,7 @@
   <!-- Présentation -->
   <a href="#presentation"
    class="relative group text-[#A5B4FC]
-          p-2 rounded-lg transition-all duration-150 
+          p-2 rounded-lg transition-all duration-150
           hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]"
    aria-label="Présentation">
   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,7 +35,7 @@
 
   <!-- Compétences -->
   <a href="#skills" class="relative group text-[#A5B4FC]
-          p-2 rounded-lg transition-all duration-150 
+          p-2 rounded-lg transition-all duration-150
           hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]" aria-label="Compétences">
     <!-- Nouveau SVG -->
     <svg class="w-6 h-6" fill="#A5B4FC" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +53,7 @@
 
   <!-- Expérience -->
   <a href="#experience" class="relative group text-[#A5B4FC]
-          p-2 rounded-lg transition-all duration-150 
+          p-2 rounded-lg transition-all duration-150
           hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]" aria-label="Expérience">
     <!-- Nouveau SVG -->
     <svg class="w-6 h-6" fill="#A5B4FC" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +78,7 @@
 
 
   <a href="#formation" class="relative group text-[#A5B4FC]
-          p-2 rounded-lg transition-all duration-150 
+          p-2 rounded-lg transition-all duration-150
           hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]" aria-label="Formation">
     <!-- SVG Formation (exemple : chapeau de diplômé) -->
     <svg class="w-6 h-6" fill="#A5B4FC" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +92,7 @@
   </a>
   <!-- Réalisations -->
   <a href="#realisations" class="relative group text-[#A5B4FC]
-          p-2 rounded-lg transition-all duration-150 
+          p-2 rounded-lg transition-all duration-150
           hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]" aria-label="Réalisations">
     <!-- SVG Réalisations -->
     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +107,7 @@
 
 
   <a href="#contact" class="relative group text-[#A5B4FC]
-          p-2 rounded-lg transition-all duration-150 
+          p-2 rounded-lg transition-all duration-150
           hover:translate-y-[2px] hover:scale-90 hover:shadow-inner hover:bg-[#0F172A]" aria-label="Contact">
     <!-- SVG Contact -->
     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -152,18 +151,62 @@
   </div>
 </div>
 
-  <section id="presentation" class="min-h-screen flex items-center justify-center px-6 bg-[#0F172A] fade-in">
-  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-    <div class="flex justify-center">
-   <img src="{{ asset('logo.png') }}" alt="Photo de Xavier Jeanne"
-     class="w-32 h-32 md:w-48 md:h-48 rounded-2xl object-cover shadow-lg border-1 border-[#06B6D4]"></div>
-    <div>
-      <h1 class="text-4xl font-bold text-[#E0E7FF] mb-4">{{$user->name}}</h1>
-      <h2 class="text-xl text-[#A5B4FC] mb-6">Développeur Fullstack</h2>
-      <p class="text-[#06B6D4] leading-relaxed">
-       {{$user->description}}
-      </p>
+<!-- Hero Section -->
+<section id="presentation" class="min-h-screen flex items-center justify-center px-6 bg-[#0F172A] fade-in">
+  <div class="max-w-4xl mx-auto text-center">
+    <!-- Card principale -->
+    <div class="bg-[#1E293B] border-2 border-[#334155] rounded-2xl p-12 shadow-2xl">
+      <!-- En-tête avec nom et titre -->
+      <div class="mb-8">
+        <h1 class="text-5xl md:text-6xl font-bold text-[#E0E7FF] mb-4">
+          {{$user->name}}
+        </h1>
+        <div class="flex items-center justify-center gap-2 text-[#A5B4FC] text-xl md:text-2xl mb-6">
+          <span>Développeur Web Full Stack</span>
+        </div>
+      </div>
+
+      <!-- Technologies -->
+      <div class="flex items-center justify-center gap-4 text-[#06B6D4] text-lg mb-8">
+        <span class="font-semibold">Laravel</span>
+        <span class="text-[#475569]">·</span>
+        <span class="font-semibold">Vue.js</span>
+      </div>
+
+      <!-- Description -->
+      <div class="max-w-2xl mx-auto mb-10">
+        <p class="text-[#94A3B8] text-lg leading-relaxed">
+          Applications web performantes,<br>
+          propres et maintenables
+        </p>
+      </div>
+
+      <!-- Boutons d'action -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contact"
+           class="px-8 py-4 bg-[#06B6D4] text-white rounded-xl font-semibold
+                  hover:bg-[#0891B2] transition-all duration-300
+                  hover:shadow-lg hover:shadow-[#06B6D4]/20
+                  hover:-translate-y-0.5 transform
+                  w-full sm:w-auto text-center">
+          Me contacter
+        </a>
+        <a href="#realisations"
+           class="px-8 py-4 bg-transparent border-2 border-[#334155] text-[#E0E7FF] rounded-xl font-semibold
+                  hover:border-[#06B6D4] hover:text-[#06B6D4] transition-all duration-300
+                  hover:-translate-y-0.5 transform
+                  w-full sm:w-auto text-center">
+          Voir les projets
+        </a>
+      </div>
     </div>
+
+    <!-- Badge description supplémentaire (optionnel) -->
+    @if($user->description)
+    <div class="mt-8 text-[#64748B] text-sm max-w-2xl mx-auto">
+      {{ $user->description }}
+    </div>
+    @endif
   </div>
 </section>
 
@@ -176,8 +219,8 @@
 
         {{-- Logo en haut à droite --}}
         <div class="flex justify-end">
-          <img src="{{ $skill->logo ? Storage::url($skill->logo) : asset('logo.png') }}" 
-               alt="{{ $skill->title }}" 
+          <img src="{{ $skill->logo ? Storage::url($skill->logo) : asset('logo.png') }}"
+               alt="{{ $skill->title }}"
                class="w-12 h-12">
         </div>
 
@@ -253,9 +296,9 @@
 
 <section id="formation" class="bg-[#1E293B] py-20 px-6 fade-in">
   <h2 class="text-3xl font-semibold text-center text-[#E0E7FF] mb-12">Formation</h2>
-  
+
   <div class="max-w-3xl mx-auto space-y-8 text-[#A5B4FC]">
-    
+
     @forelse($formations as $formation)
       <div class="rounded-xl flex flex-col bg-[#0F172A] p-4">
         {{-- Titre et organisme --}}
@@ -292,7 +335,7 @@
   <h2 class="text-3xl font-semibold text-center text-[#E0E7FF] mb-12">Réalisations</h2>
   <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-8">
     @forelse($realisations as $realisation)
-      
+
     <a href="{{ $realisation->link }}" target="_blank"
        class="block bg-[#1E293B] border border-[#0F172A] rounded-xl shadow-lg hover:shadow-2xl  transition-all p-4 w-full max-w-sm group">
 
@@ -340,7 +383,7 @@
 
   <div class="max-w-xl mx-auto text-left space-y-4 text-[#A5B4FC]">
 
-    
+
     {{-- Email --}}
     <p class="flex items-center gap-2">
        <svg viewBox="0 -2.5 20 20" class="w-6 h-6 text-[#06B6D4]" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#06B6D4">
@@ -365,11 +408,11 @@
       <a href="{{$user->github}}" target="_blank" class="text-white hover:underline">{{$user->github}}</a>
     </p>
 
-   
+
 
     <p class="flex items-center gap-2">
       <svg viewBox="0 0 24 24" class="w-6 h-6 text-[#06B6D4]" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M17 17H17.01M17.4 14H18C18.9319 14 19.3978 14 19.7654 14.1522C20.2554 14.3552 20.6448 14.7446 20.8478 15.2346C21 15.6022 21 16.0681 21 17C21 17.9319 21 18.3978 20.8478 18.7654C20.6448 19.2554 20.2554 19.6448 19.7654 19.8478C19.3978 20 18.9319 20 18 20H6C5.06812 20 4.60218 20 4.23463 19.8478C3.74458 19.6448 3.35523 19.2554 3.15224 18.7654C3 18.3978 3 17.9319 3 17C3 16.0681 3 15.6022 3.15224 15.2346C3.35523 14.7446 3.74458 14.3552 4.23463 14.1522C4.60218 14 5.06812 14 6 14H6.6M12 15V4M12 15L9 12M12 15L15 12" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-     
+
       <a href="{{ asset('cv.pdf') }}" download class="text-white hover:underline">Télécharger mon CV</a>
     </p>
 

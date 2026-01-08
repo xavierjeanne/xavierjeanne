@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Skill;
 use App\Models\Formation;
-use App\Models\Realisation; 
+use App\Models\Realisation;
 use App\Models\Experience;
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -23,6 +23,6 @@ class HomeController extends Controller
         $skills = Skill::all();
         $realisations = Realisation::with('skills')->get();
         $user = User::first();
-        return view('welcome', compact('experiences', 'formations', 'skills', 'realisations', 'user'));
+        return view('welcome-freelance', compact('experiences', 'formations', 'skills', 'realisations', 'user'));
     }
 }

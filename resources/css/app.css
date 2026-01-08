@@ -51,6 +51,38 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
+
+    body {
+        @apply relative;
+    }
+
+    body::before {
+        content: '';
+        @apply absolute inset-0 pointer-events-none;
+        background-image:
+            radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+            radial-gradient(circle, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+            radial-gradient(circle, rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px),
+            radial-gradient(circle, rgba(255, 255, 255, 0.12) 2.5px, transparent 2.5px),
+            radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        background-size:
+            80px 80px,
+            120px 120px,
+            60px 60px,
+            150px 150px,
+            100px 100px;
+        background-position:
+            0 0,
+            40px 40px,
+            20px 60px,
+            70px 30px,
+            50px 80px;
+        z-index: 1;
+    }
+
+    body > * {
+        @apply relative z-10;
+    }
 }
 
 [data-flux-field]:not(ui-radio, ui-checkbox) {
@@ -77,21 +109,21 @@ select:focus[data-flux-control] {
   .fade-in.show {
     @apply opacity-100 translate-y-0;
   }
-  
+
   /* Amélioration pour mobile */
   @media (max-width: 768px) {
     .fade-in {
       @apply translate-y-4 duration-500;  /* Animation plus courte et plus subtile sur mobile */
     }
   }
-  
+
   /* Version fallback sans JavaScript */
   @media (prefers-reduced-motion: reduce) {
     .fade-in {
       @apply opacity-100 translate-y-0 transition-none;
     }
   }
-  
+
   /* Désactiver les animations sur très petits écrans si problème */
   @media (max-width: 480px) {
     .fade-in {
