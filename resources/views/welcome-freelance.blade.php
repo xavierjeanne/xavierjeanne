@@ -3,17 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Xavier Jeanne | Développeur Web Freelance - Laravel, Livewire, Vue.js">
-  <meta name="author" content="Xavier Jeanne">
-  <meta name="keywords" content="Xavier Jeanne, Développeur Freelance, Laravel, Livewire, Vue.js, PHP, Applications Web">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Développeur Web Freelance spécialisé en Laravel, Livewire et Vue.js. Création d'applications web sur mesure, sites vitrines optimisés et refonte de projets existants. Expertise PHP & JavaScript pour vos projets digitaux.">
+  <meta name="author" content="{{ $user->name ?? 'Xavier Jeanne' }}">
+  <meta name="keywords" content="développeur freelance, Laravel, Livewire, Vue.js, PHP, applications web, développement sur mesure, refonte site web, optimisation performances, {{ $user->name ?? 'Xavier Jeanne' }}">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#0F172A">
-  <meta name="title" content="Xavier Jeanne | Développeur Web Freelance">
-  <title>Xavier Jeanne | Développeur Web Freelance</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ url()->current() }}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ url()->current() }}">
+  <meta property="og:title" content="{{ $user->name ?? 'Xavier Jeanne' }} | Développeur Web Freelance Full Stack">
+  <meta property="og:description" content="Développeur Web Freelance spécialisé en Laravel, Livewire et Vue.js. Création d'applications web performantes et maintenables pour vos projets digitaux.">
+  <meta property="og:image" content="{{ asset('logo.png') }}">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="{{ $user->name ?? 'Xavier Jeanne' }} - Développeur Freelance">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{{ url()->current() }}">
+  <meta name="twitter:title" content="{{ $user->name ?? 'Xavier Jeanne' }} | Développeur Web Freelance">
+  <meta name="twitter:description" content="Développeur Web Freelance spécialisé en Laravel, Livewire et Vue.js. Création d'applications web performantes.">
+  <meta name="twitter:image" content="{{ asset('logo.png') }}">
+
+  <title>{{ $user->name ?? 'Xavier Jeanne' }} | Développeur Web Freelance Full Stack - Laravel, Livewire, Vue.js</title>
   <link rel="icon" type="image/x-icon" href="{{asset('logo.png')}}">
+
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   @php use Illuminate\Support\Facades\Storage; @endphp
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ $user->name ?? 'Xavier Jeanne' }}",
+    "jobTitle": "Développeur Web Freelance Full Stack",
+    "description": "{{ $user->description ?? 'Développeur Web Freelance spécialisé en Laravel, Livewire et Vue.js' }}",
+    "url": "{{ url()->current() }}",
+    "email": "{{ $user->email ?? '' }}",
+    "sameAs": [
+      @if($user->linkedin ?? false)"{{ $user->linkedin }}"@endif
+      @if($user->github ?? false)"{{ $user->github }}"@endif
+    ],
+    "knowsAbout": [
+      "Laravel",
+      "Livewire",
+      "Vue.js",
+      "PHP",
+      "JavaScript",
+      "MySQL",
+      "Tailwind CSS",
+      "Développement Web",
+      "Applications Web"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Développeur Web Freelance",
+      "occupationLocation": {
+        "@type": "Country",
+        "name": "France"
+      }
+    }
+  }
+  </script>
 </head>
 <body class="bg-[#0F172A] text-[#E0E7FF] font-sans antialiased">
 
@@ -125,9 +183,9 @@
   <div class="max-w-4xl mx-auto text-center fade-in">
     <div class="mb-8 animate-fade-in-down">
       <h1 class="text-5xl md:text-7xl font-bold text-[#E0E7FF] mb-6">
-        Développeur Web Full Stack
+        Développeur Web Freelance Full Stack
       </h1>
-      <div class="flex items-center justify-center gap-3 text-[#06B6D4] text-xl md:text-2xl mb-8 flex-wrap animate-fade-in-up">
+      <div class="flex items-center justify-center gap-3 text-[#8B5CF6] text-xl md:text-2xl mb-8 flex-wrap animate-fade-in-up">
         <span class="font-semibold hover:scale-110 transition-transform duration-300 cursor-default">Laravel</span>
         <span class="text-[#475569]">·</span>
         <span class="font-semibold hover:scale-110 transition-transform duration-300 cursor-default">Livewire</span>
@@ -137,8 +195,9 @@
     </div>
 
     <p class="text-[#94A3B8] text-xl md:text-2xl leading-relaxed mb-12 max-w-2xl mx-auto animate-fade-in">
-      Applications web performantes,<br>
-      propres et maintenables
+      Création d'applications web performantes et évolutives.<br>
+      Code propre, maintenable et optimisé SEO.<br>
+      <span class="text-[#A5B4FC]">Disponible pour vos projets digitaux en France.</span>
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up">
@@ -183,12 +242,13 @@
           Site web vitrine
         </h3>
         <p class="text-[#94A3B8] mb-6 leading-relaxed">
-          Présence en ligne professionnelle et optimisée pour votre activité
+          Créez une présence en ligne professionnelle qui convertit vos visiteurs en clients. Site vitrine moderne, rapide et optimisé pour le référencement naturel (SEO). Design responsive adapté à tous les écrans (mobile, tablette, desktop).
         </p>
-        <div class="text-sm text-[#06B6D4] space-y-2">
-          <p>• Laravel / WordPress</p>
-          <p>• Design responsive</p>
-          <p>• SEO optimisé</p>
+        <div class="text-sm text-[#8B5CF6] space-y-2">
+          <p>✓ Laravel / WordPress sur mesure</p>
+          <p>✓ Design responsive multi-écrans</p>
+          <p>✓ SEO optimisé pour Google</p>
+          <p>✓ Hébergement & maintenance inclus</p>
         </div>
       </div>
 
@@ -201,15 +261,16 @@
           </svg>
         </div>
         <h3 class="text-2xl font-bold text-[#E0E7FF] mb-4">
-          Application sur mesure
+          Application web sur mesure
         </h3>
         <p class="text-[#94A3B8] mb-6 leading-relaxed">
-          Solutions web adaptées à vos besoins métier spécifiques
+          Développement d'applications web métier adaptées à vos processus et contraintes spécifiques. Solutions SaaS, CRM, ERP, plateformes e-commerce ou outils de gestion interne avec interfaces modernes et intuitives.
         </p>
-        <div class="text-sm text-[#06B6D4] space-y-2">
-          <p>• Laravel / Livewire</p>
-          <p>• Architecture scalable</p>
-          <p>• Base de données robuste</p>
+        <div class="text-sm text-[#8B5CF6] space-y-2">
+          <p>✓ Laravel + Livewire / Vue.js</p>
+          <p>✓ Architecture scalable & sécurisée</p>
+          <p>✓ API REST & intégrations tierces</p>
+          <p>✓ Dashboard admin personnalisé</p>
         </div>
       </div>
 
@@ -222,15 +283,16 @@
           </svg>
         </div>
         <h3 class="text-2xl font-bold text-[#E0E7FF] mb-4">
-          Amélioration & reprise
+          Amélioration & reprise de projet
         </h3>
         <p class="text-[#94A3B8] mb-6 leading-relaxed">
-          Optimisation et correction de projets existants
+          Audit, optimisation et modernisation de vos applications existantes. Correction de bugs, amélioration des performances, mise à jour des dépendances, refonte UI/UX et migration vers des technologies récentes pour prolonger la vie de votre projet.
         </p>
-        <div class="text-sm text-[#06B6D4] space-y-2">
-          <p>• Optimisation performances</p>
-          <p>• Corrections bugs</p>
-          <p>• Refactoring code</p>
+        <div class="text-sm text-[#8B5CF6] space-y-2">
+          <p>✓ Audit de code & sécurité</p>
+          <p>✓ Optimisation performances (GTmetrix)</p>
+          <p>✓ Correction bugs & maintenance</p>
+          <p>✓ Refactoring & modernisation</p>
         </div>
       </div>
     </div>
@@ -252,7 +314,9 @@
         <!-- Logo -->
         <div class="mb-4 w-16 h-16 flex items-center justify-center">
           <img src="{{ $skill->logo ? Storage::url($skill->logo) : asset('logo.png') }}"
-               alt="{{ $skill->title }}"
+               alt="Logo {{ $skill->title }} - Compétence technique {{ $user->name ?? 'développeur freelance' }}"
+               title="{{ $skill->title }}"
+               loading="lazy"
                class="w-full h-full object-contain">
         </div>
 
@@ -322,13 +386,69 @@
      5️⃣ SECTION À PROPOS - CONFIANCE
      ======================================== -->
 <section id="about" class="bg-[#0F172A] py-20 px-6">
-  <div class="max-w-3xl mx-auto text-center fade-in">
-    <h2 class="text-4xl font-bold text-[#E0E7FF] mb-12">
-      À propos
+  <div class="max-w-4xl mx-auto fade-in">
+    <h2 class="text-4xl font-bold text-center text-[#E0E7FF] mb-12">
+      À propos de moi
     </h2>
 
-    <div class="text-[#94A3B8] text-xl leading-relaxed space-y-6">
-      {{ $user->description }}
+    <div class="grid md:grid-cols-2 gap-12 mb-12">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold text-[#8B5CF6]">
+          Mon parcours
+        </h3>
+        <p class="text-[#94A3B8] text-lg leading-relaxed">
+          {{ $user->description ?? 'Développeur web passionné avec plusieurs années d\'expérience dans la création d\'applications web modernes. Spécialisé dans l\'écosystème Laravel et les frameworks JavaScript, j\'accompagne entreprises et startups dans leurs projets digitaux.' }}
+        </p>
+        @if($experiences->count() > 0)
+        <div class="space-y-3">
+          <h4 class="text-lg font-semibold text-[#E0E7FF]">Expériences clés</h4>
+          @foreach($experiences->take(2) as $experience)
+          <div class="border-l-2 border-[#8B5CF6] pl-4">
+            <p class="text-[#A5B4FC] font-semibold">{{ $experience->title }}</p>
+            <p class="text-[#64748B] text-sm">{{ $experience->company }} · {{ $experience->start_date ? \Carbon\Carbon::parse($experience->start_date)->format('Y') : '' }}</p>
+          </div>
+          @endforeach
+        </div>
+        @endif
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold text-[#8B5CF6]">
+          Mon approche
+        </h3>
+        <div class="space-y-4 text-[#94A3B8] text-lg leading-relaxed">
+          <p>
+            <strong class="text-[#E0E7FF]">Code de qualité</strong> : Architecture propre, tests automatisés et documentation complète pour faciliter la maintenance et l'évolution de vos projets.
+          </p>
+          <p>
+            <strong class="text-[#E0E7FF]">Performance</strong> : Optimisation systématique (lazy loading, cache, requêtes SQL) pour des applications rapides et une expérience utilisateur fluide.
+          </p>
+          <p>
+            <strong class="text-[#E0E7FF]">Communication</strong> : Points réguliers, transparence sur l'avancement et disponibilité pour répondre à vos questions tout au long du projet.
+          </p>
+        </div>
+
+        @if($formations->count() > 0)
+        <div class="mt-6">
+          <h4 class="text-lg font-semibold text-[#E0E7FF] mb-3">Formation</h4>
+          @foreach($formations->take(1) as $formation)
+          <div class="border-l-2 border-[#8B5CF6] pl-4">
+            <p class="text-[#A5B4FC] font-semibold">{{ $formation->title }}</p>
+            <p class="text-[#64748B] text-sm">{{ $formation->school }}</p>
+          </div>
+          @endforeach
+        </div>
+        @endif
+      </div>
+    </div>
+
+    <div class="bg-[#1E293B] border-2 border-[#334155] rounded-2xl p-8 text-center">
+      <p class="text-[#A5B4FC] text-xl font-semibold mb-2">
+        Disponible pour de nouveaux projets
+      </p>
+      <p class="text-[#94A3B8]">
+        Missions en freelance · Contrats courts et longs · TJM adapté à votre budget
+      </p>
     </div>
   </div>
 </section>
@@ -342,57 +462,62 @@
       Processus de travail
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <!-- Étape 1 -->
-      <div class="text-center fade-in">
-        <div class="w-16 h-16 bg-[#06B6D4] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-          1
-        </div>
-        <h3 class="text-xl font-bold text-[#E0E7FF] mb-3">
-          Échange & cadrage
-        </h3>
-        <p class="text-[#94A3B8] leading-relaxed">
-          Discussion de vos besoins et objectifs
-        </p>
-      </div>
+    <div class="relative">
+      <!-- Ligne de connexion (desktop) -->
+      <div class="hidden md:block absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-[#8B5CF6] via-[#A78BFA] to-[#8B5CF6] opacity-30" style="margin: 0 12.5%;"></div>
 
-      <!-- Étape 2 -->
-      <div class="text-center fade-in">
-        <div class="w-16 h-16 bg-[#06B6D4] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-          2
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+        <!-- Étape 1 -->
+        <div class="text-center fade-in relative">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 shadow-lg shadow-[#8B5CF6]/50 relative z-10">
+            1
+          </div>
+          <h3 class="text-xl font-bold text-[#E0E7FF] mb-3">
+            Échange & cadrage
+          </h3>
+          <p class="text-[#94A3B8] leading-relaxed">
+            Entretien gratuit pour comprendre vos besoins métier, contraintes techniques et objectifs business. Analyse du périmètre fonctionnel et définition des priorités.
+          </p>
         </div>
-        <h3 class="text-xl font-bold text-[#E0E7FF] mb-3">
-          Devis clair
-        </h3>
-        <p class="text-[#94A3B8] leading-relaxed">
-          Proposition détaillée et transparente
-        </p>
-      </div>
 
-      <!-- Étape 3 -->
-      <div class="text-center fade-in">
-        <div class="w-16 h-16 bg-[#06B6D4] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-          3
+        <!-- Étape 2 -->
+        <div class="text-center fade-in relative">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 shadow-lg shadow-[#8B5CF6]/50 relative z-10">
+            2
+          </div>
+          <h3 class="text-xl font-bold text-[#E0E7FF] mb-3">
+            Devis détaillé
+          </h3>
+          <p class="text-[#94A3B8] leading-relaxed">
+            Proposition chiffrée avec découpage fonctionnel, planning prévisionnel et conditions. Pas de frais cachés, tarif forfaitaire ou au TJM selon votre préférence.
+          </p>
         </div>
-        <h3 class="text-xl font-bold text-[#E0E7FF] mb-3">
-          Développement
-        </h3>
-        <p class="text-[#94A3B8] leading-relaxed">
-          Réalisation avec suivi régulier
-        </p>
-      </div>
 
-      <!-- Étape 4 -->
-      <div class="text-center fade-in">
-        <div class="w-16 h-16 bg-[#06B6D4] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-          4
+        <!-- Étape 3 -->
+        <div class="text-center fade-in relative">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 shadow-lg shadow-[#8B5CF6]/50 relative z-10">
+            3
+          </div>
+          <h3 class="text-xl font-bold text-[#E0E7FF] mb-3">
+            Développement agile
+          </h3>
+          <p class="text-[#94A3B8] leading-relaxed">
+            Réalisation itérative avec démonstrations régulières (sprints). Accès à un environnement de staging pour suivre l'avancement en temps réel et valider les fonctionnalités.
+          </p>
         </div>
-        <h3 class="text-xl font-bold text-[#E0E7FF] mb-3">
-          Livraison & ajustements
-        </h3>
-        <p class="text-[#94A3B8] leading-relaxed">
-          Finalisation et accompagnement
-        </p>
+
+        <!-- Étape 4 -->
+        <div class="text-center fade-in relative">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 shadow-lg shadow-[#8B5CF6]/50 relative z-10">
+            4
+          </div>
+          <h3 class="text-xl font-bold text-[#E0E7FF] mb-3">
+            Livraison & support
+          </h3>
+          <p class="text-[#94A3B8] leading-relaxed">
+            Mise en production sécurisée, formation à l'utilisation, documentation technique complète. Support post-livraison inclus (garantie bugs) et maintenance évolutive disponible.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -460,14 +585,14 @@
     <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
       <div>
         <p class="text-[#E0E7FF] font-semibold text-lg mb-2">
-          © O42l1passe
+          © {{ date('Y') }} {{ $user->name ?? 'O42l1passe' }}
         </p>
         <p class="text-[#94A3B8] text-sm">
-          Xavier Jeanne — Micro-entrepreneur
+          {{ $user->name ?? 'Xavier Jeanne' }} — Micro-entrepreneur
         </p>
       </div>
 
-      <div class="text-[#06B6D4] text-sm">
+      <div class="text-[#8B5CF6] text-sm">
         <p>Laravel · Livewire · Vue.js</p>
       </div>
     </div>
