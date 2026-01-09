@@ -186,11 +186,7 @@
         Développeur Web Freelance Full Stack
       </h1>
       <div class="flex items-center justify-center gap-3 text-[#8B5CF6] text-xl md:text-2xl mb-8 flex-wrap animate-fade-in-up">
-        <span class="font-semibold hover:scale-110 transition-transform duration-300 cursor-default">Laravel</span>
-        <span class="text-[#475569]">·</span>
-        <span class="font-semibold hover:scale-110 transition-transform duration-300 cursor-default">Livewire</span>
-        <span class="text-[#475569]">·</span>
-        <span class="font-semibold hover:scale-110 transition-transform duration-300 cursor-default">Vue.js</span>
+        {{$user->name }}
       </div>
     </div>
 
@@ -290,7 +286,6 @@
         </p>
         <div class="text-sm text-[#8B5CF6] space-y-2">
           <p>✓ Audit de code & sécurité</p>
-          <p>✓ Optimisation performances (GTmetrix)</p>
           <p>✓ Correction bugs & maintenance</p>
           <p>✓ Refactoring & modernisation</p>
         </div>
@@ -340,7 +335,7 @@
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      @foreach($realisations->take(4) as $realisation)
+      @foreach($realisations as $realisation)
       <div class="bg-[#0F172A] rounded-2xl p-8 border-2 border-[#334155] hover:border-[#06B6D4] transition-all duration-300 hover:-translate-y-2 fade-in">
         <div class="mb-6">
           <h3 class="text-2xl font-bold text-[#E0E7FF] mb-2">
@@ -431,7 +426,7 @@
         @if($formations->count() > 0)
         <div class="mt-6">
           <h4 class="text-lg font-semibold text-[#E0E7FF] mb-3">Formation</h4>
-          @foreach($formations->take(1) as $formation)
+          @foreach($formations->take(2) as $formation)
           <div class="border-l-2 border-[#8B5CF6] pl-4">
             <p class="text-[#A5B4FC] font-semibold">{{ $formation->title }}</p>
             <p class="text-[#64748B] text-sm">{{ $formation->school }}</p>
