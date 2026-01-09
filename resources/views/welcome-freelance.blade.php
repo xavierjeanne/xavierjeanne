@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Développeur Web Freelance spécialisé en Laravel, Livewire et Vue.js. Création d'applications web sur mesure, sites vitrines optimisés et refonte de projets existants. Expertise PHP & JavaScript pour vos projets digitaux.">
-  <meta name="author" content="{{ $user->name ?? 'Xavier Jeanne' }}">
-  <meta name="keywords" content="développeur freelance, Laravel, Livewire, Vue.js, PHP, applications web, développement sur mesure, refonte site web, optimisation performances, {{ $user->name ?? 'Xavier Jeanne' }}">
-  <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
-  <meta name="theme-color" content="#0F172A">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Développeur Web Freelance spécialisé en Laravel, Livewire et Vue.js. Création d'applications web sur mesure, sites vitrines optimisés et refonte de projets existants. Expertise PHP & JavaScript pour vos projets digitaux.">
+    <meta name="author" content="{{ $user->name ?? 'Xavier Jeanne' }}">
+    <meta name="keywords" content="développeur freelance, Laravel, Livewire, Vue.js, PHP, applications web, développement sur mesure, refonte site web, optimisation performances, {{ $user->name ?? 'Xavier Jeanne' }}">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="theme-color" content="#0F172A">
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="{{ url()->current() }}">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ url()->current() }}">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ url()->current() }}">
-  <meta property="og:title" content="{{ $user->name ?? 'Xavier Jeanne' }} | Développeur Web Freelance Full Stack">
-  <meta property="og:description" content="Développeur Web Freelance spécialisé en Laravel, Livewire et Vue.js. Création d'applications web performantes et maintenables pour vos projets digitaux.">
-  <meta property="og:image" content="{{ asset('logo.png') }}">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:site_name" content="{{ $user->name ?? 'Xavier Jeanne' }} - Développeur Freelance">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $user->name ?? 'Xavier Jeanne' }} | Développeur Web Freelance Full Stack">
+    <meta property="og:description" content="Développeur Web Freelance spécialisé en Laravel, Livewire et Vue.js. Création d'applications web performantes et maintenables pour vos projets digitaux.">
+    <meta property="og:image" content="{{ asset('logo.png') }}">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="{{ $user->name ?? 'Xavier Jeanne' }} - Développeur Freelance">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="{{ url()->current() }}">
-  <meta name="twitter:title" content="{{ $user->name ?? 'Xavier Jeanne' }} | Développeur Web Freelance">
-  <meta name="twitter:description" content="Développeur Web Freelance spécialisé en Laravel, Livewire et Vue.js. Création d'applications web performantes.">
-  <meta name="twitter:image" content="{{ asset('logo.png') }}">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ $user->name ?? 'Xavier Jeanne' }} | Développeur Web Freelance">
+    <meta name="twitter:description" content="Développeur Web Freelance spécialisé en Laravel, Livewire et Vue.js. Création d'applications web performantes.">
+    <meta name="twitter:image" content="{{ asset('logo.png') }}">
 
-  <title>{{ $user->name ?? 'Xavier Jeanne' }} | Développeur Web Freelance Full Stack - Laravel, Livewire, Vue.js</title>
-  <link rel="icon" type="image/x-icon" href="{{asset('logo.png')}}">
-
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-  @php use Illuminate\Support\Facades\Storage; @endphp
+    <title>{{ $user->name ?? 'Xavier Jeanne' }} | Développeur Web Freelance Full Stack - Laravel, Livewire, Vue.js</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('logo.png')}}">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-52ZGKZWJ');
+    </script>
+    <!-- End Google Tag Manager -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @php use Illuminate\Support\Facades\Storage; @endphp
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -74,7 +81,10 @@
   </script>
 </head>
 <body class="bg-[#0F172A] text-[#E0E7FF] font-sans antialiased">
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52ZGKZWJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- Sidebar flottant gauche (desktop) -->
 <aside id="sidebar"
        class="hidden md:flex fixed top-1/2 left-4 transform -translate-y-1/2 flex-col space-y-4
