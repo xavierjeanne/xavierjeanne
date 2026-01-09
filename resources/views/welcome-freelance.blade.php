@@ -335,7 +335,7 @@
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      @foreach($realisations as $realisation)
+    @foreach($realisations->sortByDesc('id')->take(4) as $realisation)
       <div class="bg-[#0F172A] rounded-2xl p-8 border-2 border-[#334155] hover:border-[#06B6D4] transition-all duration-300 hover:-translate-y-2 fade-in">
         <div class="mb-6">
           <h3 class="text-2xl font-bold text-[#E0E7FF] mb-2">
@@ -366,14 +366,13 @@
         </a>
         @endif
       </div>
-      @endforeach
+    @endforeach
 
-      @if($realisations->count() === 0)
+    @if($realisations->count() === 0)
       <div class="col-span-full text-center text-[#64748B] py-12">
         Projets en cours de mise à jour
       </div>
-      @endif
-    </div>
+    @endif
   </div>
 </section>
 
@@ -397,7 +396,7 @@
         @if($experiences->count() > 0)
         <div class="space-y-3">
           <h4 class="text-lg font-semibold text-[#E0E7FF]">Expériences clés</h4>
-          @foreach($experiences->take(2) as $experience)
+          @foreach($experiences->take(3) as $experience)
           <div class="border-l-2 border-[#8B5CF6] pl-4">
             <p class="text-[#A5B4FC] font-semibold">{{ $experience->title }}</p>
             <p class="text-[#64748B] text-sm">{{ $experience->company }} · {{ $experience->start_date ? \Carbon\Carbon::parse($experience->start_date)->format('Y') : '' }}</p>
@@ -588,7 +587,7 @@
       </div>
 
       <div class="text-[#8B5CF6] text-sm">
-        <p>Laravel · Livewire · Vue.js</p>
+        <p>Développement Web Full-stack</p>
       </div>
     </div>
   </div>
