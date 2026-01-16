@@ -33,14 +33,15 @@
 
     <title>{{ $user->name ?? 'Xavier Jeanne' }} | Développeur Web Freelance Full Stack - Laravel, Livewire, Vue.js</title>
     <link rel="icon" type="image/x-icon" href="{{asset('logo.png')}}">
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-52ZGKZWJ');
+   <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYSDYK4RJE"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RYSDYK4RJE');
     </script>
-    <!-- End Google Tag Manager -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @php use Illuminate\Support\Facades\Storage; @endphp
 
@@ -81,10 +82,7 @@
   </script>
 </head>
 <body class="bg-[#0F172A] text-[#E0E7FF] font-sans antialiased">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52ZGKZWJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 <!-- Sidebar flottant gauche (desktop) -->
 <aside id="sidebar"
        class="hidden md:flex fixed top-1/2 left-4 transform -translate-y-1/2 flex-col space-y-4
